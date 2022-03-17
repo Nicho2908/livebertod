@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChambabiLive</title>
+  </head>
+  <body>
+    <script>
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+
+      script.addEventListener("load", function (event) {
+        const config = {
+          name: "Chambertodngentod",
+          meetingId: "109210291",
+          apiKey: "5cbe79af-4b34-4509-a1fd-8aa4172ab302",
+
+          containerId: null,
+
+          micEnabled: true,
+          webcamEnabled: true,
+          participantCanToggleSelfWebcam: true,
+          participantCanToggleSelfMic: true,
+
+          chatEnabled: true,
+          screenShareEnabled: true,
+
+          /*
+      
+           Other Feature Properties
+        
+            
+            */
+          joinScreen: {
+            visible: true,
+            title: "ChambabiLive",
+            meetingUrl: "chamburikmeeting",
+          },
+
+          // ...
+          participantCanLeave: true,
+          redirectOnLeave: "https://youtu.be/dQw4w9WgXcQ",
+          permissions: {
+            // ... other permissions
+            removeParticipant: true,
+            endMeeting: true,
+            askToJoin: false,
+            drawOnWhiteboard: true,
+            toggleWhiteboard: true,
+            pin: true,
+          },
+          layout: {
+            type: "SPOTLIGHT", // "SPOTLIGHT" | "SIDEBAR" | "GRID"
+            priority: "PIN", // "SPEAKER" | "PIN",
+            gridSize: 3,
+          },
+          whiteboardEnabled: true,
+          branding: {
+            enabled: true,
+            logoURL:
+              "https://cdn.discordapp.com/attachments/937506444331335760/953857695834837002/adajdjnasd.png",
+            name: "Keitod bohay",
+            poweredBy: false,
+          },
+        };
+
+        const meeting = new VideoSDKMeeting();
+        meeting.init(config);
+      });
+
+      script.src =
+        "https://sdk.videosdk.live/rtc-js-prebuilt/0.2.6/rtc-js-prebuilt.js";
+      document.getElementsByTagName("head")[0].appendChild(script);
+    </script>
+  </body>
+</html>
